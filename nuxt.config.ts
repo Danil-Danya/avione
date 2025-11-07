@@ -1,3 +1,5 @@
+import viteTsconfigPaths from 'vite-tsconfig-paths';
+
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     
@@ -47,10 +49,13 @@ export default defineNuxtConfig({
     modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image'],
  
     css: [
-        '@/assets/styles/main.scss'
+        '~/assets/styles/main.scss'
     ],
 
+    srcDir: '.',
+    
     vite: {
+        plugins: [viteTsconfigPaths()],
         build: {
             target: 'esnext',
             cssCodeSplit: false,
@@ -79,9 +84,7 @@ export default defineNuxtConfig({
         },
         css: {
             preprocessorOptions: {
-                scss: {
-                    additionalData: `@import "@/assets/styles/global/wrapper.scss";`
-                },
+                scss: {},
             },
         },
         optimizeDeps: {

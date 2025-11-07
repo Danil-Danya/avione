@@ -15,10 +15,15 @@
     "@nuxt/image": "^2.0.0",
     "axos": "^0.0.1",
     "gsap": "^3.13.0",
+    "lodash": "^4.17.21",
     "nuxt": "^4.2.0",
     "pinia": "^3.0.4",
+    "sass": "^1.93.3",
     "swiper": "^12.0.3",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

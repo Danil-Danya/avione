@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+     <NuxtLayout :class="preloaderRef ? 'hidden' : null">
+        <NuxtPage />
+    </NuxtLayout>
 </template>
