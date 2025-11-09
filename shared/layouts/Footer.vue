@@ -19,22 +19,35 @@
                 </div>
                 <div class="footer__site-links">
                     <h3 class="footer__title">Компания</h3>
-                    <ul class="footer__site-list">
-                        <li class="footer__site-li">
-
+                    <ul class="footer__list">
+                        <li class="footer__li" v-for="link in companyLinks" :key="link">
+                            <a :href="link.path" class="footer__link">
+                                {{ link.text }}
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer__cities-links">
                     <h3 class="footer__title">Направления</h3>
+                    <ul class="footer__list">
+                        <li class="footer__li" v-for="link in citiesLinks" :key="link">
+                            <a :href="link.path" class="footer__link">
+                                {{ link.text }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="footer__app">
                     <h3 class="footer__title">Скачайте приложение</h3>
+                    <div class="footer__app-container">
+                        <img src="~/assets/images/footer/qr.png" alt="qr" class="footer__app-qr">
+                    </div>
                 </div>
             </div>
             <div class="footer__container">
                 <div class="footer__info">
-
+                    <span class="footer__line"></span>
+                    <p class="footer__text">© 2025 Онлайн-продажа авиабилетов в Ташкенте. Частное предприятие «Avione», зарегистрированное в качестве юридического лица по законодательству Республики Узбекистан, г. Ташкент, Чиланзар, Катартал-8. Дата регистрации — 05.03.2020 г., свидетельство о регистрации № 824437.</p>
                 </div>
             </div>
         </div>
@@ -44,26 +57,34 @@
 <script setup lang="ts">
 
     import { ref, Ref } from 'vue';
-    import type { SocialLinks, TextLink } from '~/shared/types/footer';
+    import type { AppLinks, SocialLinks, TextLink } from '~/shared/types/footer';
+
+    import instagram from '~/assets/images/socials/instagram.png';
+    import telegram from '~/assets/images/socials/telegram.png';
+    import facebook from '~/assets/images/socials/facebook.png';
+    import youtube from '~/assets/images/socials/youtube.png';
+
+    import googlePlay from '~/assets/images/footer/googleplay.png';
+    import appStore from '~/assets/images/footer/appstore.png';
 
     const socialLinks: Ref<SocialLinks> = ref({
         instagram: { 
-            path: new URL('~/assets/images/socials/instagram.png', import.meta.url).href, 
+            path: instagram, 
             link: 'https://www.instagram.com/avione.uz/' 
         },
 
         telegram: { 
-            path: new URL('~/assets/images/socials/telegram.png', import.meta.url).href,  
+            path: telegram,  
             link: 'https://telegram.im/@avion_uzbekistan?lang=ru' 
         },
 
         facebook: { 
-            path: new URL('~/assets/images/socials/facebook.png', import.meta.url).href,  
+            path: facebook,  
             link: 'https://www.facebook.com/avioneuzbekistan/' 
         },
 
         youtube: { 
-            path: new URL('~/assets/images/socials/youtube.png', import.meta.url).href, 
+            path: youtube, 
             link: 'https://www.youtube.com/@avioneuz' 
         }
     })
@@ -113,4 +134,20 @@
         },
     ])
 
+    const appLinks: Ref<AppLinks> = ref({
+        appStore: {
+            path: appStore,
+            link: ''
+        },
+
+        googlePlay: {
+            path: googlePlay,
+            link: ''
+        }
+    })
+
 </script>
+
+<style lang="scss">
+    @use '~/assets/styles/shared/layouts/footer.scss';
+</style>

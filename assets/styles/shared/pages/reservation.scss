@@ -1,0 +1,12 @@
+.reservation {
+    padding: 50px 0;
+
+    &__content {
+        display: flex;
+        gap: 30px;
+    }
+
+    &__ticket {
+        width: 70%;
+    }
+}

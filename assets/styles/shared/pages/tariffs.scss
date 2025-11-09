@@ -1,0 +1,16 @@
+.tariffs {
+    padding-bottom: 50px;
+    &__content {
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        padding: 30px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 30px;
+    }
+}

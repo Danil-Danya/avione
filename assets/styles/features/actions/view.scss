@@ -1,0 +1,28 @@
+.view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &__info {
+        &-li {
+            display: flex;
+            color: #2E4AB5;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            gap: 10px;
+        }
+    }
+
+    &__price {
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,38 @@
+.buy {
+    &__price {
+         color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__baggage {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background: #EFF1F4;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 10px 0;
+
+        &-text {
+            color: #64696D;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &-price {
+            color: #64696D;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

@@ -49,10 +49,20 @@ export default defineNuxtConfig({
     modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image'],
  
     css: [
-        '~/assets/styles/main.scss'
+        '~/assets/styles/main.scss',
+        // 'vue-slider-component/theme/default.css',
+        // 'vue-select/dist/vue-select.css'
     ],
 
     srcDir: '.',
+
+    plugins: [
+        './plugins/vue-date-picker.client.ts',
+        {
+            ssr: false,
+            src: './plugins/vue-range-slider.client.ts'
+        }
+    ],
     
     vite: {
         plugins: [viteTsconfigPaths()],

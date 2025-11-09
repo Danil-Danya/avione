@@ -1,0 +1,121 @@
+.ticket__card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    //width: 100%;
+
+    &-left {
+        border-right: 1px solid #000000;
+        padding-right: 30px;
+        width: 65%;
+    }
+
+    &-right {
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-block {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    &-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-time {
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &-date {
+        color: #64696D;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &-text {
+        color: #64696D;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &-cities {
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &-path {
+        width: 60%;
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        &-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            color: #2E4AB5;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    &-price {
+        color: #000;
+        font-family: Inter;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+        &-original {
+            text-decoration: line-through;
+            color: #64696D;
+            font-family: Inter;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+    }
+}

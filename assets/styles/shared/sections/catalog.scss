@@ -1,0 +1,22 @@
+.catalog {
+    &__content {
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        padding: 30px;
+    }
+
+    &__container {
+        margin-top: 30px;
+    }
+
+    &__title {
+        color: #000;
+        font-family: Inter;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+    }
+}

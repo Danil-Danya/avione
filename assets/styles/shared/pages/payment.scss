@@ -1,0 +1,23 @@
+.payment {
+    padding-bottom: 50px;
+
+    &__content {
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        padding: 30px;
+    }
+
+    &__price {
+        display: flex;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+
+        &-right {
+            display: flex;
+        }
+    }
+}

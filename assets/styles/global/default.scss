@@ -17,3 +17,192 @@ li {
 a {
     text-decoration: none;
 }
+
+main {
+    min-height: 100vh;
+}
+
+img {
+    object-fit: cover;
+}
+
+.title {
+  color: #000;
+  font-family: Inter;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.text {
+  color: #64696D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.black {
+  color: #000 !important;
+}
+
+.input {
+  border-radius: 10px;
+  background: #EFF1F4;
+  border: none;
+  padding: 6px;
+
+  &__title {
+    margin-bottom: 10px;
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.vueform-slider .slider-handle {
+  transition: all 0.15s ease;
+}
+.vueform-slider .slider-handle:hover {
+  transform: scale(1.05);
+}
+
+.slider-connect {
+  background: #2E4AB5 !important;
+}
+
+.custom-slider {
+  height: 3px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 26px;
+    cursor: pointer;
+
+    &__input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    &__slider {
+        position: absolute;
+        inset: 0;
+        background-color: #d9d9d9;
+        border-radius: 34px;
+        transition: 0.3s;
+
+        &::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border-radius: 50%;
+        transition: 0.3s;
+        }
+    }
+
+    &__input:checked + &__slider {
+        background-color: #2E4AB5;
+    }
+
+    &__input:checked + &__slider::before {
+        transform: translateX(20px);
+    }
+
+    &:active &__slider::before {
+        width: 22px;
+    }
+}
+
+.button {
+    border: 0;
+    border-radius: 10px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+        outline: 1px solid #000000;
+        background: #FFFFFF !important;
+        color: #000000;
+    }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 2px solid #2E4AB5; 
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox input:checked + .checkmark {
+  background-color: #2E4AB5;
+  border-color: #2E4AB5;
+}
+
+.checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.line {
+    background: red;
+    width: 100%;
+    height: 3px;
+    display: block;
+}
+
+.calendar-enter-active,
+.calendar-leave-active {
+  transition: all 0.25s ease;
+}
+
+.calendar-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.calendar-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}

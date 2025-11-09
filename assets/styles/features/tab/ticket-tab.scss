@@ -1,0 +1,21 @@
+.ticket__tab {
+    margin-top: 50px;
+    
+    &-list {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    &-link{
+        padding: 5px;
+        font-size: 20px;
+        color: #000000;
+
+        &.router-link-active {
+            display: block;
+            color: #ffffff;
+            border-radius: 10px;
+            background: #2E4AB5;
+        }
+    }
+}

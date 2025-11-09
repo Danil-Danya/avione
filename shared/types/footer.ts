@@ -8,6 +8,16 @@ export interface TextLink {
     text: string
 }
 
+export interface AppLink {
+    path: string
+    link: string
+}
+
+export interface AppLinks {
+    appStore: AppLink,
+    googlePlay: AppLink
+}
+
 export interface SocialLinks {
     instagram: SocialLink
     telegram: SocialLink
