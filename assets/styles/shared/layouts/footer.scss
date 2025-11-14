@@ -2,9 +2,48 @@
     background: #2E4AB5;
     padding: 50px 0;
 
+    &__app {
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            color: #FFFFFF;
+
+            @include media ($xs) {
+                font-size: 16px;
+            }
+        }
+
+        &-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        &-logos {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        // @include media ($xs) {
+        //     width: 100%;
+        // }
+        // &-qr {
+        //     @include media ($xs) {
+        //         width: 100%;
+        //     }
+        // }
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
+
+        @include media ($lg) {
+            flex-wrap: wrap;
+            gap: 30px;
+        }
     }
 
     &__title {
@@ -26,6 +65,10 @@
         font-weight: 400;
         line-height: normal;
         margin-bottom: 10px;
+
+        @include media ($lg) {
+            font-size: 14px;
+        }
     }
 
     &__line {

@@ -1,16 +1,32 @@
 .navbar {
     background: #2E4AB5;
     padding: 50px 0 150px 0;
+
+    @include media ($md) {
+        padding-bottom: 50px;
+    }
     
     &__content {
         display: flex;
         justify-content: space-between;
     }
 
+    &__logo {
+        &-img {
+            @include media ($xs) {
+                width: 140px;
+            }
+        }
+    }
+
     &__actions {
         &-list {
             display: flex;
             gap: 30px;
+
+            @include media ($xs) {
+                gap: 10px;
+            }
         }
 
         &-li {

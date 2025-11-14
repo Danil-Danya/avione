@@ -31,5 +31,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/widgets/catalog-card.scss';
+    @import '~/assets/styles/widgets/catalog-card.scss';
 </style>

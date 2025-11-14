@@ -12,12 +12,73 @@
         display: flex;
     }
 
+    &__info {
+        //height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-button {
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+        width: 100%;
+
+        border-radius: 10px;
+        background: #EFF1F4;
+
+        padding: 15px;
+        gap: 15px;
+
+        &-title {
+            color: #000;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+
+        &-input {
+            background: #FFFFFF !important;
+        }
+    }
+
+    &__balance {
+        display: flex;  
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__bottom {
+        margin-top: 50px;
+
+        &-radio {
+            display: flex;
+            gap: 30px;
+        }
+
+        &-card {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__top {
         display: flex;
         justify-content: space-between;
 
         &-right {
             display: flex;
+            gap: 10px;
         }
     }
 }

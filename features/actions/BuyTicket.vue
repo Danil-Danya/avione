@@ -14,11 +14,11 @@
 
 <script setup lang="ts">
 
-    import Button from '~/shared/ui/Button.vue';
-    import Switcher from '~/shared/ui/Switcher.vue';
+    import Button from '~/shared-ui/ui/Button.vue';
+    import Switcher from '~/shared-ui/ui/Switcher.vue';
 
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/actions/buy.scss'
+    @import '~/assets/styles/features/actions/buy.scss'
 </style>

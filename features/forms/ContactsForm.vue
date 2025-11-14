@@ -13,6 +13,6 @@
 
 <script setup lang="ts">
 
-    import Input from '~/shared/ui/Input.vue';
+    import Input from '~/shared-ui/ui/Input.vue';
 
 </script>

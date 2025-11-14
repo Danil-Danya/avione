@@ -6,5 +6,5 @@
 </template>
 
 <style lang="scss">
-    @use '~/assets/styles/widgets/flight-card.scss';
+    @import '~/assets/styles/widgets/flight-card.scss';
 </style>

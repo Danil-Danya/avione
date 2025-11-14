@@ -1,3 +1,2 @@
-@use '~/assets/styles/global/wrapper.scss' as *;
-@use '~/assets/styles/global/fonts.scss' as *;
-@use '~/assets/styles/global/default.scss' as *;
+@import '~/assets/styles/global/fonts.scss';
+@import '~/assets/styles/global/default.scss';

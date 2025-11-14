@@ -8,7 +8,7 @@ services:
     environment:
       NITRO_PORT: 7000
       NITRO_HOST: 0.0.0.0
-    volumes:
-      - .:/app
-      - /app/node_modules
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
     restart: unless-stopped

@@ -1,16 +1,28 @@
 .advertising {
     padding: 150px 0 50px 0;
 
+    @include media ($sm) {
+        padding-top: 50px;
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
         gap: 20px;
+
+        @include media ($lg) {
+            flex-direction: column;
+        }
     }
 
     &__sales {
         border-radius: 10px;
         width: 50%;
         background: linear-gradient(74deg, #32EF6B 5.58%, #25BB52 88.56%);
+
+        @include media ($lg) {
+            width: 100%;
+        }
 
         &-bottom {
             margin-bottom: 30px;
@@ -45,6 +57,21 @@
         position: relative;
         width: 50%;
         padding: 15px 30px;
+
+        @include media ($lg) {
+            width: 100%;
+            height: 500px;
+        }
+
+        @include media ($md) {
+            width: 100%;
+            height: 400px;
+        }
+
+        @include media ($sm) {
+            width: 100%;
+            height: 300px;
+        }
         
         &-img {
             border-radius: 10px;

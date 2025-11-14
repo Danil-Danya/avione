@@ -4,6 +4,11 @@
     padding: 30px;
     width: 30%;
 
+    @include media ($lg) {
+        width: 100%;
+        padding: 15px;
+    }
+
     &-top {
         display: flex;
         justify-content: space-between;

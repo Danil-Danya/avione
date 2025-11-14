@@ -1,0 +1,37 @@
+.sidebar {
+    width: 330px;
+
+    &__block {
+        padding: 15px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        margin-top: 50px;
+    }
+
+    &__link {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        color: #000;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        transition: all 300ms;
+        cursor: pointer;
+
+        &:hover {
+            background: #CCCCCC;
+        }
+
+        &.router-link-active {
+            background: #2E4AB5;
+            color: #FFFFFF;
+        }
+    }
+}

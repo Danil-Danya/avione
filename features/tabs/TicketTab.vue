@@ -38,5 +38,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/tab/ticket-tab.scss';
+    @import '~/assets/styles/features/tab/ticket-tab.scss';
 </style>

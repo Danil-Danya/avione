@@ -5,7 +5,13 @@
         display: flex;
         align-items: center;
         gap: 30px;
+
+        @include media ($lg) {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
     }
+
     &-link{
         padding: 5px;
         font-size: 20px;

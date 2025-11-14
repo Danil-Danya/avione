@@ -7,10 +7,10 @@
 
 <script setup lang="ts">
 
-    import Head from '~/shared/pages/index/Head.vue';
-    import Advertising from '~/shared/pages/index/Advertising.vue';
-    import Catalog from '~/shared/sections/Catalog.vue';
-    import Seo from '~/shared/sections/Seo.vue';
+    import Head from '~/shared-ui/pages/index/Head.vue';
+    import Advertising from '~/shared-ui/pages/index/Advertising.vue';
+    import Catalog from '~/shared-ui/sections/Catalog.vue';
+    import Seo from '~/shared-ui/sections/Seo.vue';
 
     import air from '~/assets/images/seo/air.png';
 

@@ -152,7 +152,7 @@
 
 <script setup lang="ts">
 
-    import CheckBox from '~/shared/ui/CheckBox.vue';
+    import CheckBox from '~/shared-ui/ui/Checkbox.vue';
     import formatTime from '~/utils/formatTime';
 
     const departure = ref([0, 24])
@@ -168,5 +168,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/filters/air.scss';
+    @import '~/assets/styles/features/filters/air.scss';
 </style>

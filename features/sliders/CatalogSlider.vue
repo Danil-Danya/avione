@@ -83,5 +83,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/sliders/catalog-slider.scss';
+    @import '~/assets/styles/features/sliders/catalog-slider.scss';
 </style>

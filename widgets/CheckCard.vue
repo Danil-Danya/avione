@@ -29,5 +29,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/widgets/check-card.scss';
+    @import '~/assets/styles/widgets/check-card.scss';
 </style>

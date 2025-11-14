@@ -46,8 +46,8 @@
 
     import { useRoute } from 'vue-router';
 
-    import Input from '~/shared/ui/Input.vue';
-    import Button from '~/shared/ui/Button.vue';
+    import Input from '~/shared-ui/ui/Input.vue';
+    import Button from '~/shared-ui/ui/Button.vue';
 
     const route = useRoute();
     const path = route.path;

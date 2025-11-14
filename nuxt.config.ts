@@ -1,4 +1,8 @@
 import viteTsconfigPaths from 'vite-tsconfig-paths';
+import { resolve } from 'path';
+
+process.env.SASS_SILENCE_DEPRECATION_WARNINGS = '1';
+process.env.SASS_QUIET_DEPS = 'true';
 
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
@@ -49,8 +53,8 @@ export default defineNuxtConfig({
     modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image'],
  
     css: [
-        '~/assets/styles/main.scss',
-        // 'vue-slider-component/theme/default.css',
+        '@/assets/styles/main.scss',
+        //'~/assets/styles/global/wrapper.scss'
         // 'vue-select/dist/vue-select.css'
     ],
 
@@ -65,7 +69,8 @@ export default defineNuxtConfig({
     ],
     
     vite: {
-        plugins: [viteTsconfigPaths()],
+        //plugins: [viteTsconfigPaths()],
+        logLevel: 'error',
         build: {
             target: 'esnext',
             cssCodeSplit: false,
@@ -94,20 +99,19 @@ export default defineNuxtConfig({
         },
         css: {
             preprocessorOptions: {
-                scss: {},
+                scss: {
+                    additionalData: `@import "@/assets/styles/global/wrapper.scss";`,
+                },
             },
         },
+
         optimizeDeps: {
             include: ['axios', 'pinia'],
         },
     },
 
     alias: {
-        "@app": "/app",
-        "@entities": "/entities",
-        "@features": "/features",
-        "@shared": "/shared",
-        "@widgets": "/widgets",
-        "@api": "/api",
+        '~': resolve('./'),
+        '@': resolve('./'),
     },
 })

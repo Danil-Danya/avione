@@ -1,0 +1,27 @@
+.order__table {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: auto;
+    width: 100%;
+    text-align: center;
+
+    th, td {
+        padding: 20px 0;
+        white-space: nowrap;
+        border-bottom: 1px solid #000;
+    }  
+
+    &-block {
+        background: #FFFFFF;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+    }
+}

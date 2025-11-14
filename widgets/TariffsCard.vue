@@ -19,9 +19,9 @@
 
 <script setup lang="ts">
 
-    const CardIcon = defineAsyncComponent(() => import('~/shared/icons/tariffs/Card.vue'));
-    const OkIcon = defineAsyncComponent(() => import('~/shared/icons/tariffs/Ok.vue'));
-    const NoIcon = defineAsyncComponent(() => import('~/shared/icons/tariffs/No.vue'));
+    const CardIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/Card.vue'));
+    const OkIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/Ok.vue'));
+    const NoIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/No.vue'));
 
     const tariffsList: Ref = ref([
         {
@@ -41,5 +41,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/widgets/tariffs-card.scss';
+    @import '~/assets/styles/widgets/tariffs-card.scss';
 </style>

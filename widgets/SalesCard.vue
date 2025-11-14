@@ -45,11 +45,11 @@
     
     import { defineAsyncComponent } from 'vue';
 
-    const StartAirplaneIcon = defineAsyncComponent(() => import('~/shared/icons/global/StartAirplane.vue'));
-    const DownAirplaneIcon = defineAsyncComponent(() => import('~/shared/icons/global/DownAirplane.vue'));
+    const StartAirplaneIcon = defineAsyncComponent(() => import('~/shared-ui/icons/global/StartAirplane.vue'));
+    const DownAirplaneIcon = defineAsyncComponent(() => import('~/shared-ui/icons/global/DownAirplane.vue'));
 
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/widgets/sales-card.scss';
+    @import '~/assets/styles/widgets/sales-card.scss';
 </style>

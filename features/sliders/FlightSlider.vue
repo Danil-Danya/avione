@@ -37,5 +37,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/sliders/flight-slider.scss';
+    @import '~/assets/styles/features/sliders/flight-slider.scss';
 </style>

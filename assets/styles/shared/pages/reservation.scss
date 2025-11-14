@@ -4,9 +4,20 @@
     &__content {
         display: flex;
         gap: 30px;
+
+        @include media ($lg) {
+            flex-direction: column;
+            gap: 0;
+            background: #FFFFFF;
+            border-radius: 10px;
+        }
     }
 
     &__ticket {
         width: 70%;
+
+        @include media ($lg) {
+            width: 100%;
+        }
     }
 }

@@ -16,9 +16,9 @@
 
 <script setup lang="ts">
 
-    const BriefcaseIcon = defineAsyncComponent(() => import('~/shared/icons/reservation/Briefcase.vue'));
-    const BaggageIcon = defineAsyncComponent(() => import('~/shared/icons/reservation/Baggage.vue'));
-    const BagIcon = defineAsyncComponent(() => import('~/shared/icons/reservation/Bag.vue'));
+    const BriefcaseIcon = defineAsyncComponent(() => import('~/shared-ui/icons/reservation/Briefcase.vue'));
+    const BaggageIcon = defineAsyncComponent(() => import('~/shared-ui/icons/reservation/Baggage.vue'));
+    const BagIcon = defineAsyncComponent(() => import('~/shared-ui/icons/reservation/Bag.vue'));
 
     const infoList: Ref = ref([
         {
@@ -38,5 +38,5 @@
 </script>
 
 <style lang="scss">
-    @use '~/assets/styles/features/actions/view.scss';
+    @import '~/assets/styles/features/actions/view.scss';
 </style>
