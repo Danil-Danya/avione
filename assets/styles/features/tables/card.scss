@@ -1,0 +1,31 @@
+.card__table {
+    &-container {
+        border-radius: 10px;
+        background: #FFF;
+        padding: 30px;
+        margin-top: 30px;
+        max-width: 540px;
+        width: 100%;
+    }
+
+    &-row {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #000000;
+        align-items: center;
+    }
+
+    &-number {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-type {
+        width: 100px;
+        display: flex;
+        justify-content: center;
+    }
+}

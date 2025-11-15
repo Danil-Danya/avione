@@ -1,29 +1,41 @@
 <template>
-    <div class="catalog__slider">
-        <Swiper class="catalog__swiper"
+    <div class="catalog__slider" v-if="isReady">
+        <span class="catalog__slider-button catalog__slider-button--prev">
+            <LeftIcon />
+        </span>
+
+        <Swiper
+            class="catalog__swiper"
             :modules="[Navigation, Autoplay]"
             :space-between="20"
             :loop="true"
             :centered-slides="true"
             :slides-per-view="1"
-            :autoplay="{
-                delay: 3500,
-                disableOnInteraction: false
+            :autoplay="autoplayOptions"
+            :navigation="{
+                prevEl: '.catalog__slider-button--prev',
+                nextEl: '.catalog__slider-button--next'
             }"
         >
-            <SwiperSlide 
-                class="catalog__slider-swiper-slide" 
-                v-for="catalog in 10" :key="catalog"
+            <SwiperSlide
+                class="catalog__slider-swiper-slide"
+                v-for="catalog in 10"
+                :key="catalog"
             >
-                <CatalogCard v-for="catalog in catalogCardList"
+                <CatalogCard
+                    v-for="catalog in catalogCardList"
                     :cities="catalog.cities"
                     :image="catalog.image"
-                    :price="catalog.price" 
+                    :price="catalog.price"
                     :date="catalog.date"
-                    :key="catalog" 
+                    :key="catalog"
                 />
             </SwiperSlide>
         </Swiper>
+
+        <span class="catalog__slider-button catalog__slider-button--next">
+            <RightIcon />
+        </span>
     </div>
 </template>
 
@@ -36,10 +48,20 @@
     import 'swiper/css/pagination';
 
     import CatalogCard from '~/widgets/CatalogCard.vue';
-
+    
     import image1 from '~/assets/images/catalog/Rectangle 32.png';
     import image2 from '~/assets/images/catalog/Rectangle 33.png';
     import image3 from '~/assets/images/catalog/Rectangle 34.png';
+
+    const LeftIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Left.vue')); 
+    const RightIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Right.vue'));
+
+    const autoplayOptions = ref<any>({
+        delay: 3500,
+        disableOnInteraction: false
+    });
+
+    const isReady = ref(false);
     
     const catalogCardList: Ref = ref([
         {
@@ -79,6 +101,14 @@
             date: '15 сентября 12:00',
         },
     ]);
+
+    onMounted(() => {
+        if (window.innerWidth < 990) {
+            autoplayOptions.value = false;
+        }
+
+        isReady.value = true;
+    });
 
 </script>
 

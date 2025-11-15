@@ -4,6 +4,10 @@
         border-radius: 10px;
         box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
         padding: 30px;
+
+        @include media ($md) {
+            padding: 15px;
+        }
     }
 
     &__container {

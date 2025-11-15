@@ -2,8 +2,8 @@
     <TicketTab />
     <Reservation />
     <Tariffs />
-    <!-- <Contacts />
-    <Passenger /> -->
+    <Contacts />
+    <Passenger />
 </template>
 
 <script setup lang="ts">

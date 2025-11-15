@@ -48,11 +48,14 @@
                 </tr>
             </tbody>
         </table>
+        <Pagination />
     </div>
 </template>
 
 
 <script lang="ts" setup>
+
+    import Pagination from '../pagination/Pagination.vue';
 
     const ArrowIcon = defineAsyncComponent(() => import('~/shared-ui/icons/profile/Arrow.vue'));
     const UserIcon = defineAsyncComponent(() => import('~/shared-ui/icons/profile/User.vue'));

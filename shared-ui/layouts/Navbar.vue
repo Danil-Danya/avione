@@ -13,7 +13,7 @@
                             </span>
                             <p class="navbar__actions-text">RU</p>
                         </li>
-                        <li class="navbar__actions-li">
+                        <li class="navbar__actions-li" @click="toggleModal">
                             <span class="navbar__actions-icon">
                                 <loginIcon />
                             </span>
@@ -23,15 +23,25 @@
                 </div>
             </div>
         </div>
+        <Transition name="modal">
+            <RegistrationModal @closeModal="toggleModal" v-if="isActiveModal" />
+        </Transition>
     </section>
 </template>
 
 <script setup lang="ts">
 
     import { defineAsyncComponent } from 'vue';
+    import RegistrationModal from '~/features/modals/RegistrationModal.vue';
 
     const LangIcon = defineAsyncComponent(() => import('~/shared-ui/icons/navbar/Lang.vue'));
     const LoginIcon = defineAsyncComponent(() => import('~/shared-ui/icons/navbar/Login.vue'));
+
+    const isActiveModal: Ref<boolean> = ref(false);
+    
+    const toggleModal = () => {
+        isActiveModal.value = !isActiveModal.value;
+    }
 
 </script>
 

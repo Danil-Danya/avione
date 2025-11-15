@@ -1,0 +1,17 @@
+.sales__slider {
+    position: relative;
+
+    &-button {
+        position: absolute;
+        top: 30%;
+        z-index: 9;
+
+        &--prev {
+            left: 20px;
+        }
+
+        &--next {
+            right: 20px;
+        }
+    }
+}

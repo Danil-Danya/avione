@@ -1,0 +1,34 @@
+.registration__form {
+    max-width: 500px;
+    margin-top: 30px;
+
+    &-title {
+        margin-bottom: 20px;
+    }
+
+    &-input {
+        padding: 15px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid #2E4AB5;
+        font-size: 16px;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &-checkbox {
+        &-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+    }
+
+    &-button {
+        width: 100%;
+    }
+}

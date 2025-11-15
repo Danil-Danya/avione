@@ -1,9 +1,9 @@
 <template>
     <TicketTab />
-    <!-- <Reservation />
+    <Reservation />
     <Contacts />
     <Passenger />
-    <Payment /> -->
+    <Payment />
 </template>
 
 <script setup lang="ts">

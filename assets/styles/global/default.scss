@@ -46,12 +46,14 @@ img {
 
 .main {
   &__page {
-    max-width: 850px;
+    margin-left: 360px;
+    width: 100%;
   }
   &__container {
+    position: relative;
     margin-top: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     width: 100%;
   }
 }
@@ -270,7 +272,21 @@ input {
   transition: all 0.25s ease;
 }
 
+.modal {
+  &__close {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .passengers__title-profile {
+  margin-bottom: 50px;
+}
+
+.passengers {
   margin-bottom: 50px;
 }
 
@@ -282,4 +298,15 @@ input {
 .calendar-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: all 0.25s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
 }
