@@ -1,11 +1,13 @@
 .tariffs__card {
     padding: 15px;
-    border: 1px solid black;
+    outline: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
+    transition: 300ms;
 
     &.active {
-        border: 2px solid #2E4AB5;
+        outline: 2px solid #2E4AB5;
+        background: #2e49b533;
     }
 
     &-top {

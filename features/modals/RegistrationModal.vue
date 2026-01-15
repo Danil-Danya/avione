@@ -26,7 +26,6 @@
         emits('closeModal');
     };
 
-
 </script>
 
 

@@ -1,21 +1,33 @@
 <template>
     <div class="buy">
-        <h3 class="buy__price">2.732.850 сум</h3>
-        <div class="buy__baggage">
-            <div class="buy__baggage-info">
-                <p class="buy__baggage-text">Багаж 23 кг</p>
-                <p class="buy__baggage-price">229 000 сум</p>
-            </div>
-            <Switcher />
-        </div>
-        <Button padding="15px 60px" background="#2E4AB5" text="Купить" />
+        <h3 class="buy__price">
+            {{ formatNumber(price) }} {{ $t('valute') }}
+        </h3>
+
+        <Button v-if="!route.query.ticket_id"
+            class="buy__button"
+            padding="15px 60px"
+            background="#2E4AB5"
+            :text="$t('buttonBuy')"
+            @click="$emit('buy')"
+        />
     </div>
 </template>
 
+
 <script setup lang="ts">
+
+    import { useRoute } from 'vue-router';
 
     import Button from '~/shared-ui/ui/Button.vue';
     import Switcher from '~/shared-ui/ui/Switcher.vue';
+
+    const props = defineProps<{
+        id: string;
+        price: number;
+    }>();
+
+    const route = useRoute();
 
 </script>
 

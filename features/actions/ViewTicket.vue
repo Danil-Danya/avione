@@ -10,7 +10,7 @@
                 </li>
             </div>
         </div>
-        <p class="view__price">2.732.850 сум</p>
+        <!-- <p class="view__price">{{ formatNumber(price) }} сум</p> -->
     </div>
 </template>
 
@@ -20,17 +20,26 @@
     const BaggageIcon = defineAsyncComponent(() => import('~/shared-ui/icons/reservation/Baggage.vue'));
     const BagIcon = defineAsyncComponent(() => import('~/shared-ui/icons/reservation/Bag.vue'));
 
+    import { formatNumber } from '~/utils/formatNumber';
+
+    const props = defineProps<{
+        price: number,
+        class: number,
+        baggage: string;
+        isHandLuggage: boolean
+    }>();
+
     const infoList: Ref = ref([
         {
-            text: 'Эконом',
+            text: props.class,
             icon: BagIcon
         },
         {
-            text: '0 KG',
+            text: props.baggage,
             icon: BaggageIcon
         },
         {
-            text: '1 место ручной клади',
+            text: props.isHandLuggage ? 'Присутcтвует' : 'Отсутствует',
             icon: BriefcaseIcon
         },
     ])

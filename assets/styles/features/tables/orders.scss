@@ -12,16 +12,27 @@
     width: 100%;
     text-align: center;
 
+    &-tr {
+        cursor: pointer;
+        // &:hover {
+        //     background: #e2e2e2;
+        // }
+    }
+
+    
     th, td {
         padding: 20px 0;
         white-space: nowrap;
         border-bottom: 1px solid #000;
     }  
-
+    
     &-block {
         background: #FFFFFF;
         padding: 30px;
         border-radius: 10px;
         width: 100%;
+        @include media ($md) {
+            overflow-x: scroll;
+        }
     }
 }

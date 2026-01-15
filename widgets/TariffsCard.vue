@@ -1,8 +1,8 @@
 <template>
     <div class="tariffs__card">
         <div class="tariffs__card-top">
-            <h3 class="tariffs__title title">Base</h3>
-            <p class="tariffs__card-price">2.732.850 сум</p>
+            <h3 class="tariffs__title title">{{ tariff.title }}</h3>
+            <p class="tariffs__card-price">{{ formatNumber(tariff.price) }} сум</p>
         </div>
         <div class="tariffs__card-options">
             <ul class="tariffs__card-list">
@@ -18,24 +18,41 @@
 </template>
 
 <script setup lang="ts">
+    //import { formatNumber } from '~/utils/formatNumber';
 
     const CardIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/Card.vue'));
     const OkIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/Ok.vue'));
     const NoIcon = defineAsyncComponent(() => import('~/shared-ui/icons/tariffs/No.vue'));
 
+
+    const props = defineProps<{
+        tariff: object
+    }>();
+
+    console.log(props.tariff);
+    
+
     const tariffsList: Ref = ref([
         {
-            icon: OkIcon,
-            text: 'Руная кладь 8 кг'
+            icon:  props.tariff.baggage ? OkIcon : NoIcon,
+            text: props.tariff.baggage ? `Багаж: ${props.tariff.baggage}` : 'Багаж отстуствует'
         },
         {
-            icon: NoIcon,
-            text: 'Возврат билета не разрешено'
+            icon:  props.tariff.handLuggage ? OkIcon : NoIcon,
+            text: props.tariff.handLuggage ? `Ручная кладь: ${props.tariff.handLuggage}` : 'Ручная кладь отстуствует'
         },
         {
-            icon: CardIcon,
-            text: 'Изменение в билете платно'
+            text: props.tariff.services[0] ? `${props.tariff.services[0]?.name}: ${props.tariff?.services[0]?.statusName?.toLowerCase()}` : null
         },
+        {
+            text: props.tariff.services[1] ? `${props.tariff.services[1]?.name}: ${props.tariff?.services[1]?.statusName?.toLowerCase()}` : null
+        },
+        {
+            text: props.tariff.services[2] ? `${props.tariff.services[2]?.name}: ${props.tariff?.services[2]?.statusName?.toLowerCase()}` : null
+        },
+        // {
+        //     text: `${props.tariff.services[3]?.name}: ${props.tariff.services[3].statusName?.toLowerCase()}`
+        // },
     ])
 
 </script>

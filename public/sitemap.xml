@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+            xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/astana</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/astana"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/astana"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/dushanbe</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/dushanbe"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/dushanbe"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/abu-dhabi</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/abu-dhabi"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/abu-dhabi"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/moskva</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/moskva"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/moskva"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/boku</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/boku"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/boku"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/tbilisi</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/tbilisi"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/tbilisi"/>
+    </url>
+
+    <url>
+        <loc>https://avione.uz/ru/napravlenie/tashkent/istanbul</loc>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://avione.uz/ru/napravlenie/tashkent/istanbul"/>
+        <xhtml:link rel="alternate" hreflang="uz" href="https://avione.uz/uz/napravlenie/tashkent/istanbul"/>
+    </url>
+
+</urlset>
+

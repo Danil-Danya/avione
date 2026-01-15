@@ -2,8 +2,8 @@
     <section class="contacts">
         <div class="container">
             <div class="contacts__content">
-                <h2 class="title contacts__title">Контакты получателя</h2>
-                <p class="text contacts__text">Отправим билеты, сообщим об изменениях в поездке. Свяжемся, если нужно будет уточнить информацию.</p>
+                <h2 class="title contacts__title">{{ $t('contactsTitle') }}</h2>
+                <p class="text contacts__text">{{ $t('contactsDescription') }}</p>
                 <ContactsForm />
             </div>
         </div>

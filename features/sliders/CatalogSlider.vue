@@ -1,5 +1,5 @@
 <template>
-    <div class="catalog__slider" v-if="isReady">
+    <div class="catalog__slider">
         <span class="catalog__slider-button catalog__slider-button--prev">
             <LeftIcon />
         </span>
@@ -19,15 +19,17 @@
         >
             <SwiperSlide
                 class="catalog__slider-swiper-slide"
-                v-for="catalog in 10"
+                v-for="catalog in 1"
                 :key="catalog"
             >
-                <CatalogCard
-                    v-for="catalog in catalogCardList"
-                    :cities="catalog.cities"
+                <CatalogCard v-if="locationsStore?.locations?.length"
+                    v-for="catalog in locationsStore?.locations"
+                    :cities="`${toLatinCity(catalog.from)}, ${toLatinCity(catalog.to)}`"
                     :image="catalog.image"
                     :price="catalog.price"
                     :date="catalog.date"
+                    :link="catalog.link"
+                    :seo-link="`/napravlenie/tashkent/${toLatinCityDefault(catalog.to).toLowerCase()}`"
                     :key="catalog"
                 />
             </SwiperSlide>
@@ -43,15 +45,18 @@
 
     import { Swiper, SwiperSlide } from 'swiper/vue';
     import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+    import { useLocationsStore } from '~/entities/location/models/store';
+    import { toLatinCityDefault } from '~/utils/toLatinCity';
+
     import 'swiper/css';
     import 'swiper/css/navigation';
     import 'swiper/css/pagination';
 
     import CatalogCard from '~/widgets/CatalogCard.vue';
     
-    import image1 from '~/assets/images/catalog/Rectangle 32.png';
-    import image2 from '~/assets/images/catalog/Rectangle 33.png';
-    import image3 from '~/assets/images/catalog/Rectangle 34.png';
+    // import image1 from '~/assets/images/catalog/Rectangle 32.png';
+    // import image2 from '~/assets/images/catalog/Rectangle 33.png';
+    // import image3 from '~/assets/images/catalog/Rectangle 34.png';
 
     const LeftIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Left.vue')); 
     const RightIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Right.vue'));
@@ -61,53 +66,21 @@
         disableOnInteraction: false
     });
 
+    const locationsStore = useLocationsStore();
+    await locationsStore.fetchLocations();
+
     const isReady = ref(false);
     
-    const catalogCardList: Ref = ref([
-        {
-            cities: 'Москва, Россия',
-            image: image1,
-            price: '2.732.850',
-            date: '31 августа 14:00',
-        },
-        {
-            cities: 'Ст-Петербург, Россия',
-            image: image2,
-            price: '2.950.000',
-            date: '2 сентября 09:30',
-        },
-        {
-            cities: 'Анкара, Турция',
-            image: image3,
-            price: '3.420.000',
-            date: '5 сентября 18:45',
-        },
-        {
-            cities: 'Сеул, Юж. Корея',
-            image: image1,
-            price: '6.870.000',
-            date: '12 сентября 23:15',
-        },
-        {
-            cities: 'Дубай, ОАЭ',
-            image: image2,
-            price: '3.890.000',
-            date: '8 сентября 05:20',
-        },
-        {
-            cities: 'Рим, Италия',
-            image: image3,
-            price: '7.250.000',
-            date: '15 сентября 12:00',
-        },
-    ]);
-
     onMounted(() => {
         if (window.innerWidth < 990) {
             autoplayOptions.value = false;
         }
 
         isReady.value = true;
+
+        setTimeout(async () => {
+            await locationsStore.fetchLocations()
+        }, 1000)
     });
 
 </script>

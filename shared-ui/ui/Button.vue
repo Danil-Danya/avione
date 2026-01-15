@@ -1,5 +1,5 @@
 <template>
-    <button class="button"
+    <button type="button" class="button"
         :style="{
             background,
             padding

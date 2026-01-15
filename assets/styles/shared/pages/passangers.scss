@@ -1,5 +1,35 @@
 .passangers {
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+
+    &__button {
+        &-message {
+            &-error {
+                background: red;
+                padding: 10px;
+                border-radius: 10px;
+                color: #FFFFFF;
+            }
+
+            &-success {
+                background: #05E347;
+                padding: 10px;
+                border-radius: 10px;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    &__button {
+        &-container {
+            @include media ($md) {
+                width: 100%;
+            }
+        }
+
+        @include media ($md) {
+            width: 100%;
+        }
+    }
 
     &__content {
         background: #FFFFFF;
@@ -9,6 +39,10 @@
 
         @include media ($lg) {
             flex-wrap: wrap;
+        }
+
+        @include media ($md) {
+            padding: 15px;
         }
     }
 
@@ -78,6 +112,11 @@
         &-switcher {
             &-container {
                 width: 250px;
+
+                @include media ($md) {
+                    width: 100%;
+                    order: 3;
+                }
             }
         }
 
@@ -91,10 +130,38 @@
             }
         }
 
+        &-input {
+            &-select {
+                width: 250px;
+                
+                @include media ($md) {
+                    width: 100%;
+                }
+            }
+
+            &-container {
+                width: 250px;
+                @include media ($md) {
+                    width: 100%;
+
+                    & > .input {
+                        max-width: 100%;
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+
         &-bottom {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+
+            &-modal {
+                 gap: 20px;
+                flex-wrap: wrap;
+            }
+
             @include media ($lg) {
                 flex-wrap: wrap;
                 gap: 20px;

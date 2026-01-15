@@ -3,10 +3,14 @@
     border: 1px solid #000000;
     border-radius: 10px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-    max-width: 1206px;
+    max-width: 1266px;
     width: 100%;
 
     position: absolute;
+
+    @include media ($xxl) {
+        max-width: 1110px;
+    }
 
     @include media ($lg) {
         position: relative;
@@ -14,6 +18,43 @@
         border: none;
         border-radius: 0;
         background: #2E4AB5;
+    }
+
+    @include media ($lg) {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        background: #2E4AB5;
+    }
+
+    &-swapper {
+        background: #2E4AB5;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        position: absolute;
+        left: 215px;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include media ($lg) {
+            left: auto;
+            right: 215px;
+        }
+
+        @include media ($md) {
+            right: auto;
+            width: 50px;
+            height: 50px;
+            top: 40px;
+            background: #FFFFFF;
+            z-index: 9;
+            left: 70%;
+            border: 2px solid #000000;
+        }
     }
 
     &__text {
@@ -87,6 +128,7 @@
 
     &-data {
         display: flex;
+        position: relative;
 
         @include media ($lg) {
             flex-direction: column;
@@ -112,6 +154,7 @@
     &-input {
         border: none;
         width: 210px;
+        font-size: 18px;
 
         
         &::placeholder {
@@ -128,13 +171,15 @@
             display: flex;
             align-items: center;
             border-right: 1px solid #000;
-            
+            max-width: 230px;
             position: relative;
+            font-size: 18px;
             
             @include media ($lg) {
                 border: 1px solid black;
                 background: #FFFFFF;
                 border-radius: 10px;
+                max-width: 100%;
                 //margin-top: 10px;
             }
             // &.calendar {
@@ -144,4 +189,42 @@
             // }
         }
     }
+}
+
+.search__button {
+    padding: 15px 30px;
+    background: #2E4AB5;
+    color: #FFFFFF;
+    border-radius: 10px;
+    transition: all 300ms;
+
+    &:hover {
+        background: #FFFFFF;
+        outline: 1px solid #000;
+        color: #000;
+    }
+}
+
+.global__filter-loader {
+    height: 3px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4px;
+
+    .bar {
+        height: 100%;
+        width: 0;
+        background-color: #EE2532;
+        animation: loading 2s infinite;
+        transform-origin: left;
+    }
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    50% { width: 70%; }
+    80% { width: 90%; }
+    100% { width: 100%; }
 }

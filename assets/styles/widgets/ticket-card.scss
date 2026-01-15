@@ -4,35 +4,123 @@
     padding: 30px;
     display: flex;
     //width: 100%;
+    align-items: center;
 
     @include media ($lg) {
         flex-direction: column;
         padding: 15px;
     }
 
-    &-left {
-        border-right: 1px solid #000000;
-        padding-right: 30px;
-        width: 65%;
+    &-stops {
+        font-size: 13px;
+        color: #2E4AB5 !important;
+        cursor: pointer;
 
+        &:hover .ticket__card-layover-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+    &-layover {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+
+        &-info {
+            display: flex;
+            justify-content: center;
+        }
+
+        &:hover .ticket__card-layover-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        &-tooltip {
+            position: absolute;
+            width: 250px;
+            z-index: 99;
+            background: #000;
+            color: #FFFFFF;
+            font-size: 14px;
+            padding: 15px;
+            border-radius: 10px;
+
+            bottom: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+
+            width: 250px;
+            z-index: 99;
+
+            background: #000;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.4;
+
+            padding: 15px;
+            border-radius: 10px;
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+            opacity 0.18s ease,
+            transform 0.18s ease;
+
+            @include media ($md) {
+                right: 0px;
+                left: 115px;
+            }
+
+            & > p > span {
+                color: rgb(255, 95, 95);
+                font-weight: 700;
+            }
+        }
+    }
+
+    &-left {
+        padding-right: 30px;
+        max-width: 100%;
+        min-width: 65%;
+        width: 100%;
+        
         @include media ($lg) {
+            border-bottom: 1px solid #000000;
+            min-width: auto;
             width: 100%;
             border-right: 0;
-            border-bottom: 1px solid #000000;
             padding-right: 0;
+            padding-bottom: 10px;
         }
     }
     
+    &-img {
+        max-width: 150px;
+        height: 50px;
+        //border: 1px solid #2E4AB5;
+        //border-radius: 100%;
+        object-fit: contain;
+    }
+    
     &-right {
+        border-left: 1px solid #000000;
         padding: 0 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        height: 100%;
         
         @include media ($lg) {
             width: 100%;
             border-right: 0;
             border-bottom: 1px solid #000000;
+            border: 0;
             padding: 15px 0;
             //padding-bottom: 15px;
         }
@@ -40,7 +128,25 @@
 
     &-block {
         display: flex;
-        justify-content: space-between;
+        gap: 20px;
+
+        @include media ($xs) {
+            display: grid;
+            grid-template-columns: 0.6fr 1.8fr 0.6fr;
+            gap: 10px;
+        }
+
+        &-row {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &-info {
+                display: flex;
+                flex-direction: column;
+                gap: 70px;
+            }
+        }
     }
 
     &-top {
@@ -61,6 +167,11 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        width: 70px;
+
+        @include media ($md) {
+            width: auto;
+        }
     }
 
     &-date {
@@ -91,7 +202,12 @@
     }
 
     &-path {
-        width: 60%;
+        width: 100%;
+
+        &-stops {
+            width: 100%;
+            max-width: 330px;
+        }
 
         &-top {
             display: flex;
@@ -109,6 +225,10 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+
+            @include media ($md) {
+                font-size: 12px;
+            }
         }
     }
 
@@ -139,3 +259,44 @@
         }
     }
 }
+
+// .ticket__card-layovers {
+//     position: relative;
+// }
+
+// .layover-trigger {
+//     position: relative;
+//     color: #5b5bff;
+//     cursor: pointer;
+//     display: inline-block;
+// }
+
+// .layover-tooltip {
+//     position: absolute;
+//     bottom: calc(100% + 8px);
+//     left: 50%;
+//     transform: translateX(-50%) translateY(4px);
+
+//     background: #1f1f1f;
+//     color: #fff;
+//     padding: 10px 14px;
+//     border-radius: 8px;
+
+//     font-size: 14px;
+//     line-height: 1.4;
+//     white-space: nowrap;
+
+//     opacity: 0;
+//     visibility: hidden;
+//     pointer-events: none;
+
+//     transition:
+//         opacity 0.15s ease,
+//         transform 0.15s ease;
+// }
+
+// .layover-trigger:hover .layover-tooltip {
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateX(-50%) translateY(0);
+// }

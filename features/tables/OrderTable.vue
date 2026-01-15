@@ -4,11 +4,11 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Маршрут</th>
-                    <th>Дата</th>
-                    <th>Пассажиры</th>
-                    <th>Цена</th>
-                    <th>Статус</th>
+                    <th>{{ $t('ordersTableRoute') }}</th>
+                    <th>{{ $t('ordersTableDate') }}</th>
+                    <th>{{ $t('ordersTablePassengers') }}</th>
+                    <th>{{ $t('ordersTablePrice') }}</th>
+                    <th>{{ $t('ordersTableStatus') }}</th>
                 </tr>
             </thead>
 
@@ -16,16 +16,17 @@
                 <tr class="order__table-tr"
                     v-for="(item, index) in tableList" 
                     :key="index"
+                    @click="goToOrder(item.order)"
                 >
                     <td class="order__table-td">{{ index + 1 }}</td>
 
                     <td class="order__table-td">
                         <div class="order__table-cities">
-                            {{ item.cities.from }}  
+                            {{ toLatinCity(item.cities.from) }}  
                             <span class="order__table-cities-icon">
                                 <ArrowIcon />
                             </span>
-                            {{ item.cities.to }}
+                            {{ toLatinCity(item.cities.to) }}
                         </div>
                     </td>
 
@@ -38,90 +39,56 @@
                         - {{ item.countPassenger }}
                     </td>
 
-                    <td class="order__table-td">{{ item.price }} сум</td>
+                    <td class="order__table-td">{{ item.price }} {{ $t('valute') }}</td>
 
                     <td class="order__table-td">
                         <span :class="['status', getStatusClass(item.status)]">
-                            {{ item.status }}
+                            {{ $t(statusKey(item.status)) }}
                         </span>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <Pagination />
     </div>
+    <!-- <Pagination /> -->
 </template>
 
 
 <script lang="ts" setup>
 
     import Pagination from '../pagination/Pagination.vue';
+    import { useRouter } from 'vue-router';
+
+    import { toLatinCity } from '~/utils/toLatinCity';
 
     const ArrowIcon = defineAsyncComponent(() => import('~/shared-ui/icons/profile/Arrow.vue'));
     const UserIcon = defineAsyncComponent(() => import('~/shared-ui/icons/profile/User.vue'));
 
-    const tableList: Ref<object[]> = ref([
-        {
-            cities: {
-                from: 'Ташкент',
-                to: 'Москва'
-            },
-            date: '10.29.2025',
-            countPassenger: 1,
-            price: '2.570.000',
-            status: 'Выписано'
-        },
-        {
-            cities: {
-                from: 'Самарканд',
-                to: 'Дубай'
-            },
-            date: '11.05.2025',
-            countPassenger: 2,
-            price: '6.420.000',
-            status: 'Оплата'
-        },
-        {
-            cities: {
-                from: 'Бухара',
-                to: 'Стамбул'
-            },
-            date: '12.18.2025',
-            countPassenger: 3,
-            price: '9.750.000',
-            status: 'Отменено'
-        },
-        {
-            cities: {
-                from: 'Фергана',
-                to: 'Сеул'
-            },
-            date: '01.09.2026',
-            countPassenger: 1,
-            price: '4.880.000',
-            status: 'В пути'
-        },
-        {
-            cities: {
-                from: 'Нукус',
-                to: 'Астана'
-            },
-            date: '02.14.2026',
-            countPassenger: 4,
-            price: '3.210.000',
-            status: 'Выписано'
-        },
-        {
-            cities: {
-                from: 'Ташкент',
-                to: 'Куала-Лумпур'
-            },
-            date: '03.01.2026',
-            countPassenger: 1,
-            price: '7.900.000',
-            status: 'Ожидание'
+    const props = defineProps<{
+        tableList: Array
+    }>()
+
+    const router = useRouter();
+
+    const statusKey = (status: string) => {
+        switch (status) {
+            case 'Выписано': return 'ordersStatusIssued';
+            case 'Ожидает оплаты': return 'ordersStatusWaitingPayment';
+            case 'Отменено': return 'ordersStatusCanceled';
+            case 'В пути': return 'ordersStatusInTransit';
+            case 'Забронированно': return 'ordersStatusBooked';
+            default: return '';
         }
-    ]);
+    }
+
+    const goToOrder = (order) => {
+        sessionStorage.setItem('order', JSON.stringify(order));
+        router.replace('/profile/order');
+    }
+
+    const translateStatus = (key: keyof typeof statusTranslations) => {
+        return statusTranslations[key][currentLang.value] || statusTranslations[key].ru;
+    }
 
     const getStatusClass = (status: string): string => {
         switch (status) {
@@ -137,7 +104,7 @@
             case 'В пути': 
                 return 'status--blue';
 
-            case 'Ожидание':
+            case 'Забронированно':
                 return 'status--gray';
 
             default:

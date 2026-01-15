@@ -6,6 +6,10 @@
         margin-top: 30px;
         max-width: 540px;
         width: 100%;
+
+        @include media ($md) {
+            order: 2;
+        }
     }
 
     &-row {
@@ -17,11 +21,11 @@
         align-items: center;
     }
 
-    &-number {
-        width: 200px;
-        display: flex;
-        justify-content: center;
-    }
+    // &-number {
+    //     width: 200px;
+    //     display: flex;
+    //     justify-content: center;
+    // }
 
     &-type {
         width: 100px;

@@ -1,29 +1,78 @@
 <template>
     <form class="payment__form">
         <div class="payment__form-input-container">
-            <h3 class="payment__form-title">Номер карты</h3>
-            <Input type="card" v-model="cardPayload.card" class="payment__form-input" placeholder="0000 0000 0000 0000" />
+            <h3 class="payment__form-title">{{ $t('paymentCardNumber') }}</h3>
+
+            <Input 
+                v-model="cardPayload.pan"
+                class="payment__form-input"
+                placeholder="0000 0000 0000 0000"
+                :mask="'0000 0000 0000 0000'"
+            />
         </div>
+
         <div class="payment__form-input-container">
-            <h3 class="payment__form-title">Срок действия</h3>
-            <Input type="MMYY" v-model="cardPayload.MMYY" class="payment__form-input" placeholder="ММ/ГГ" />
+            <h3 class="payment__form-title">{{ $t('paymentExpireDate') }}</h3>
+
+            <Input 
+                v-model="cardPayload.expireDate"
+                class="payment__form-input"
+                placeholder="MM/YY"
+                :mask="mmMask"
+            />
         </div>
-        <div class="payment__form-input-container">
-            <h3 class="payment__form-title">Сохранить карту</h3>
-            <Input type="tel" v-model="cardPayload.tel" class="payment__form-input" placeholder="+998 (90) 999-99-99" />
+
+        <div class="payment__form-input-container-check">
+            <Checkbox v-model="cardPayload.saveCard" />
+
+            <h3 class="payment__form-title payment__form-title-check">{{ $t('paymentSaveCard') }}</h3>
         </div>
     </form>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 
-    import { Reactive } from 'vue';
+    import { reactive, ref, watch } from "vue";
+    import { useRoute } from "vue-router";
+    import IMask from "imask";
     import Input from '~/shared-ui/ui/Input.vue';
+    import Checkbox from "~/shared-ui/ui/Checkbox.vue";
 
-    const cardPayload: Reactive<Object> = reactive({
-        card: '',
-        tel: '',
-        MMYY: ''
-    })
+    const route = useRoute();
+
+    const cardPayload = reactive({
+        pan: "",
+        expireDate: "",
+        saveCard: false,
+    });
+
+    const mmMask = {
+        mask: "MM/YY",
+        blocks: {
+            MM: {
+                mask: IMask.MaskedRange,
+                from: 1,
+                to: 12,
+                maxLength: 2
+            },
+            YY: {
+                mask: "00"
+            }
+        }
+    };
+
+    const emit = defineEmits(["update:cardData"]);
+
+
+    watch(
+        () => ({ ...cardPayload }),
+        (val) => {
+            emit('update:cardData', {
+                type: 'card',
+                ...val
+            });
+        },
+        { deep: true }
+    );
 
 </script>

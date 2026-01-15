@@ -12,7 +12,8 @@
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
-        align-items: center;
+        //align-items: center;
+        justify-content: space-between;
         margin-top: 15px;
     }
 
@@ -20,6 +21,7 @@
         width: 100%;
         border-radius: 10px;
         transition: all 300ms;
+        height: 250px;
         
         &:hover {
             transform: scale(1.1);

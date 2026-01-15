@@ -3,6 +3,7 @@
         <div class="container">
             <div class="head__content">
                 <GlobalFilter class="head__filter-from-to" />
+                
             </div>
         </div>
     </section>

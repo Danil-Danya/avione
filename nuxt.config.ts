@@ -14,12 +14,53 @@ export default defineNuxtConfig({
         host: process.env.NITRO_HOST || '127.0.0.1'
     },
 
+    yandexMetrika: {
+        id: 106138666,
+        webvisor: true,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        defer: false,     
+        useCDN: true,      
+        dev: true  
+    },
+
     app: {
         head: {
-            title: 'Avione — дешёвые авиабилеты онлайн',
+            title: 'Купить авиабилеты онлайн по Узбекистану и за границу на AVIONE',
             htmlAttrs: {
                 lang: 'ru'
             },
+
+            script: [
+                {
+                    async: true,
+                    src: 'https://www.googletagmanager.com/gtag/js?id=G-XM5NN2H481',
+                },
+                {
+                    children: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-XM5NN2H481');
+                    `,
+                },
+                {
+                    type: 'text/javascript',
+                    children: `
+                        !function(f,b,e,v,n,t,s)
+                        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                        n.queue=[];t=b.createElement(e);t.async=!0;
+                        t.src=v;s=b.getElementsByTagName(e)[0];
+                        s.parentNode.insertBefore(t,s)}(window, document,'script',
+                        'https://connect.facebook.net/en_US/fbevents.js');
+                        fbq('init', '1599624121034257');
+                        fbq('track', 'PageView');
+                    `,
+                },
+            ],
             meta: [
                 { charset: 'utf-8' },
                 { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,7 +71,8 @@ export default defineNuxtConfig({
                 {
                     name: 'keywords',
                     content: 'авиабилеты, купить билет, дешёвые авиабилеты, Ташкент, Avione, онлайн бронирование'
-                }
+                },
+                { property: 'og:image', content: 'https://avione.uz/logo.png' },
             ],
         },
         pageTransition: false
@@ -50,7 +92,13 @@ export default defineNuxtConfig({
     
 
     devtools: { enabled: true },
-    modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image'],
+    modules: [
+        'yandex-metrika-module-nuxt3',
+        '@nuxtjs/i18n', 
+        '@nuxt/image', 
+        '@nuxt/fonts', 
+        '@nuxt/icon', 
+    ],
  
     css: [
         '@/assets/styles/main.scss',
@@ -61,12 +109,33 @@ export default defineNuxtConfig({
     srcDir: '.',
 
     plugins: [
+        './plugins/pinia.ts',
         './plugins/vue-date-picker.client.ts',
+        './plugins/api.instance.ts',
         {
             ssr: false,
             src: './plugins/vue-range-slider.client.ts'
         }
     ],
+
+    i18n: {
+        locales: [
+            { code: 'ru', name: 'Русский', file: 'rus.json' },
+            { code: 'uz', name: 'O‘zbekcha', file: 'uzb.json' }
+        ],
+
+        detectBrowserLanguage: {
+            useCookie: true,
+            cookieKey: 'i18n_lang',
+            alwaysRedirect: false,
+            fallbackLocale: 'ru'
+        },
+
+        defaultLocale: 'ru',
+        langDir: 'locales',
+        strategy: 'prefix',
+    },
+
     
     vite: {
         //plugins: [viteTsconfigPaths()],

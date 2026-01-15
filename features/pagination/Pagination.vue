@@ -39,7 +39,7 @@
     const LeftIcon = defineAsyncComponent(() => import('~/shared-ui/icons/pagination/Left.vue'));
     const RightIcon = defineAsyncComponent(() => import('~/shared-ui/icons/pagination/Right.vue'));
 
-    const totalPages = 5;
+    const totalPages = 4;
     const currentPage = ref(1);
 
     const setPage = (page: number) => {

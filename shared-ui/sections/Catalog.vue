@@ -2,7 +2,7 @@
     <section class="catalog">
         <div class="container">
             <div class="catalog__content">
-                <h2 class="catalog__title">Популярные направления</h2>
+                <h2 class="catalog__title">{{ $t('sectionPopular') }}</h2>
                 <div class="catalog__container">
                     <CatalogSlider />
                 </div>

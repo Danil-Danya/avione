@@ -7,7 +7,7 @@
                         <img src="~/assets/images/logos/logo.svg" alt="Logo" class="footer__logo-img">
                     </div>
                     <div class="footer__socials">
-                        <h3 class="footer__title">Мы в соцсетях</h3>
+                        <h3 class="footer__title">{{ $t('footerSocialTitle') }}</h3>
                         <ul class="footer__socials-list">
                             <li class="footer__socials-li" v-for="socialLink in socialLinks" :key="socialLink">
                                 <a :href="socialLink.link" class="footer__socials-link">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="footer__site-links">
-                    <h3 class="footer__title">Компания</h3>
+                    <h3 class="footer__title">{{ $t('footerAboutCompany') }}</h3>
                     <ul class="footer__list">
                         <li class="footer__li" v-for="link in companyLinks" :key="link">
                             <a :href="link.path" class="footer__link">
@@ -28,7 +28,7 @@
                     </ul>
                 </div>
                 <div class="footer__cities-links">
-                    <h3 class="footer__title">Направления</h3>
+                    <h3 class="footer__title">{{ $t('footerCitiesTitle') }}</h3>
                     <ul class="footer__list">
                         <li class="footer__li" v-for="link in citiesLinks" :key="link">
                             <a :href="link.path" class="footer__link">
@@ -38,7 +38,7 @@
                     </ul>
                 </div>
                 <div class="footer__app">
-                    <h3 class="footer__title">Скачайте приложение</h3>
+                    <h3 class="footer__title">{{ $t('footerAppTitle') }}</h3>
                     <div class="footer__app-container">
                         <img src="~/assets/images/footer/qr.png" alt="qr" class="footer__app-qr">
                         <div class="footer__app-logos">
@@ -53,7 +53,7 @@
             <div class="footer__container">
                 <div class="footer__info">
                     <span class="footer__line"></span>
-                    <p class="footer__text">© 2025 Онлайн-продажа авиабилетов в Ташкенте. Частное предприятие «Avione», зарегистрированное в качестве юридического лица по законодательству Республики Узбекистан, г. Ташкент, Чиланзар, Катартал-8. Дата регистрации — 05.03.2020 г., свидетельство о регистрации № 824437.</p>
+                    <p class="footer__text">{{ $t('footerCopyright') }}</p>
                 </div>
             </div>
         </div>
@@ -64,6 +64,7 @@
 
     import { ref, Ref } from 'vue';
     import type { AppLinks, SocialLinks, TextLink } from '~/shared-ui/types/footer';
+    import { useI18n } from 'vue-i18n';
 
     import instagram from '~/assets/images/socials/instagram.png';
     import telegram from '~/assets/images/socials/telegram.png';
@@ -72,6 +73,8 @@
 
     import googlePlay from '~/assets/images/footer/googleplay.png';
     import appStore from '~/assets/images/footer/appstore.png';
+
+    const { t } = useI18n();
 
     const socialLinks: Ref<SocialLinks> = ref({
         instagram: { 
@@ -98,45 +101,45 @@
     const companyLinks: Ref<TextLink []> = ref([
         {
             path: '/',
-            text: 'О компания'
+            text: t('footerAboutCompany')
         },
 
         {
             path: '/',
-            text: 'Авиабилеты'
+            text: t('footerTickets')
         },
 
         {
             path: '/',
-            text: 'Оферта'
+            text: t('footerOffer')
         },
 
         {
             path: '/',
-            text: 'Confidentiality'
+            text: t('footerConfidentiality')
         },
     ])
 
     const citiesLinks: Ref<TextLink []> = ref([
         {
-            path: '/',
-            text: 'Ташкент - Москва'
+            path: '/avia/tashkent-moscow?adult_count=1&max_price=500000000&class=0&search_with_baggage=false',
+            text: t('footerCityTashkentMoscow')
         },
         {
-            path: '/',
-            text: 'Мовска - Ташкент'
+            path: '/avia/moscow-tashkent?adult_count=1&max_price=500000000&class=0&search_with_baggage=false',
+            text: t('footerCityMoscowTashkent')
         },
         {
-            path: '/',
-            text: 'Ташкент - Казань'
+            path: '/avia/tashkent-kazan?adult_count=1&max_price=500000000&class=0&search_with_baggage=false',
+            text: t('footerCityTashkentKazan')
         },
         {
-            path: '/',
-            text: 'Ташкент - Стамбул'
+            path: '/avia/tashkent-istanbul?adult_count=1&max_price=500000000&class=0&search_with_baggage=false',
+            text: t('footerCityTashkentIstanbul')
         },
         {
-            path: '/',
-            text: 'Шымкент - Стамбул'
+            path: '/avia/shimkent-istanbul?adult_count=1&max_price=500000000&class=0&search_with_baggage=false',
+            text: t('footerCityShymkentIstanbul')
         },
     ])
 
@@ -144,13 +147,13 @@
         appStore: {
             path: appStore,
             text: 'App Store',
-            link: ''
+            link: 'https://apps.apple.com/us/app/avione/id1563864149'
         },
 
         googlePlay: {
             path: googlePlay,
             text: 'Google play',
-            link: ''
+            link: 'https://play.google.com/store/apps/details?id=com.avione.uz&hl=ru'
         }
     })
 

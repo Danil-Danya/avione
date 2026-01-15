@@ -1,284 +1,199 @@
 const countries = [
-    {
-        code: 'UZ',
-        name: {
-            ru: 'Узбекистан',
-            en: 'Uzbekistan'
-        }
-    },
-    {
-        code: 'RU',
-        name: {
-            ru: 'Россия',
-            en: 'Russia'
-        }
-    },
-    {
-        code: 'TR',
-        name: {
-            ru: 'Турция',
-            en: 'Turkey'
-        }
-    },
-    {
-        code: 'KZ',
-        name: {
-            ru: 'Казахстан',
-            en: 'Kazakhstan'
-        }
-    },
-    {
-        code: 'KG',
-        name: {
-            ru: 'Киргизия',
-            en: 'Kyrgyzstan'
-        }
-    },
-    {
-        code: 'TJ',
-        name: {
-            ru: 'Таджикистан',
-            en: 'Tajikistan'
-        }
-    },
-    {
-        code: 'TM',
-        name: {
-            ru: 'Туркменистан',
-            en: 'Turkmenistan'
-        }
-    },
-    {
-        code: 'AZ',
-        name: {
-            ru: 'Азербайджан',
-            en: 'Azerbaijan'
-        }
-    },
-    {
-        code: 'AM',
-        name: {
-            ru: 'Армения',
-            en: 'Armenia'
-        }
-    },
-    {
-        code: 'GE',
-        name: {
-            ru: 'Грузия',
-            en: 'Georgia'
-        }
-    },
-    {
-        code: 'UA',
-        name: {
-            ru: 'Украина',
-            en: 'Ukraine'
-        }
-    },
-    {
-        code: 'BY',
-        name: {
-            ru: 'Беларусь',
-            en: 'Belarus'
-        }
-    },
-    {
-        code: 'CN',
-        name: {
-            ru: 'Китай',
-            en: 'China'
-        }
-    },
-    {
-        code: 'JP',
-        name: {
-            ru: 'Япония',
-            en: 'Japan'
-        }
-    },
-    {
-        code: 'KR',
-        name: {
-            ru: 'Южная Корея',
-            en: 'South Korea'
-        }
-    },
-    {
-        code: 'DE',
-        name: {
-            ru: 'Германия',
-            en: 'Germany'
-        }
-    },
-    {
-        code: 'FR',
-        name: {
-            ru: 'Франция',
-            en: 'France'
-        }
-    },
-    {
-        code: 'IT',
-        name: {
-            ru: 'Италия',
-            en: 'Italy'
-        }
-    },
-    {
-        code: 'ES',
-        name: {
-            ru: 'Испания',
-            en: 'Spain'
-        }
-    },
-    {
-        code: 'GB',
-        name: {
-            ru: 'Великобритания',
-            en: 'United Kingdom'
-        }
-    },
-    {
-        code: 'US',
-        name: {
-            ru: 'США',
-            en: 'United States'
-        }
-    },
-    {
-        code: 'CA',
-        name: {
-            ru: 'Канада',
-            en: 'Canada'
-        }
-    },
-    {
-        code: 'AE',
-        name: {
-            ru: 'ОАЭ',
-            en: 'United Arab Emirates'
-        }
-    },
-    {
-        code: 'SA',
-        name: {
-            ru: 'Саудовская Аравия',
-            en: 'Saudi Arabia'
-        }
-    },
-    {
-        code: 'QA',
-        name: {
-            ru: 'Катар',
-            en: 'Qatar'
-        }
-    },
-    {
-        code: 'EG',
-        name: {
-            ru: 'Египет',
-            en: 'Egypt'
-        }
-    },
-    {
-        code: 'TH',
-        name: {
-            ru: 'Таиланд',
-            en: 'Thailand'
-        }
-    },
-    {
-        code: 'VN',
-        name: {
-            ru: 'Вьетнам',
-            en: 'Vietnam'
-        }
-    },
-    {
-        code: 'IN',
-        name: {
-            ru: 'Индия',
-            en: 'India'
-        }
-    },
-    {
-        code: 'ID',
-        name: {
-            ru: 'Индонезия',
-            en: 'Indonesia'
-        }
-    },
-    {
-        code: 'MY',
-        name: {
-            ru: 'Малайзия',
-            en: 'Malaysia'
-        }
-    },
-    {
-        code: 'SG',
-        name: {
-            ru: 'Сингапур',
-            en: 'Singapore'
-        }
-    },
-    {
-        code: 'PH',
-        name: {
-            ru: 'Филиппины',
-            en: 'Philippines'
-        }
-    },
-    {
-        code: 'BR',
-        name: {
-            ru: 'Бразилия',
-            en: 'Brazil'
-        }
-    },
-    {
-        code: 'AR',
-        name: {
-            ru: 'Аргентина',
-            en: 'Argentina'
-        }
-    },
-    {
-        code: 'MX',
-        name: {
-            ru: 'Мексика',
-            en: 'Mexico'
-        }
-    },
-    {
-        code: 'CL',
-        name: {
-            ru: 'Чили',
-            en: 'Chile'
-        }
-    },
-    {
-        code: 'AU',
-        name: {
-            ru: 'Австралия',
-            en: 'Australia'
-        }
-    },
-    {
-        code: 'NZ',
-        name: {
-            ru: 'Новая Зеландия',
-            en: 'New Zealand'
-        }
-    },
-    {
-        code: 'ZA',
-        name: {
-            ru: 'ЮАР',
-            en: 'South Africa'
-        }
-    }
-]
+    "UZBEKISTAN",
+    "KAZAKHSTAN",
+    "RUSSIA",
+    "BELARUS",
+    "TAJIKISTAN",
+    "KYRGYZSTAN",
+    "AUSTRALIA",
+    "AUSTRIA",
+    "AZERBAIJAN",
+    "ALBANIA",
+    "ALGERIA",
+    "ANGOLA",
+    "ANDORRA",
+    "ANTIGUA AND BARBUDA",
+    "ARGENTINA",
+    "ARMENIA",
+    "AFGHANISTAN",
+    "BAHAMAS",
+    "BANGLADESH",
+    "BARBADOS",
+    "BAHRAIN",
+    "BELIZE",
+    "BELGIUM",
+    "BENIN",
+    "BULGARIA",
+    "BOLIVIA",
+    "BOSNIA AND HERZEGOVINA",
+    "BOTSWANA",
+    "BRAZIL",
+    "BRUNEI",
+    "BURKINA FASO",
+    "BURUNDI",
+    "BHUTAN",
+    "VANUATU",
+    "UNITED KINGDOM",
+    "HUNGARY",
+    "VENEZUELA",
+    "EAST TIMOR",
+    "VIETNAM",
+    "GABON",
+    "HAITI",
+    "GUYANA",
+    "GAMBIA",
+    "GHANA",
+    "GUATEMALA",
+    "GUINEA",
+    "GUINEA-BISSAU",
+    "GERMANY",
+    "HONDURAS",
+    "GRENADA",
+    "GREECE",
+    "GEORGIA",
+    "DENMARK",
+    "DJIBOUTI",
+    "DOMINICA",
+    "DOMINICAN REPUBLIC",
+    "EGYPT",
+    "ZAMBIA",
+    "ZIMBABWE",
+    "ISRAEL",
+    "INDIA",
+    "INDONESIA",
+    "JORDAN",
+    "IRAQ",
+    "IRAN",
+    "IRELAND",
+    "ICELAND",
+    "SPAIN",
+    "ITALY",
+    "YEMEN",
+    "CABO VERDE",
+    "CAMBODIA",
+    "CAMEROON",
+    "CANADA",
+    "QATAR",
+    "KENYA",
+    "CYPRUS",
+    "KIRIBATI",
+    "CHINA",
+    "COLOMBIA",
+    "COMOROS",
+    "CONGO",
+    "DEMOCRATIC REPUBLIC OF THE CONGO",
+    "NORTH KOREA",
+    "SOUTH KOREA",
+    "COSTA RICA",
+    "COTE D'IVOIRE",
+    "CUBA",
+    "KUWAIT",
+    "LAOS",
+    "LATVIA",
+    "LESOTHO",
+    "LIBERIA",
+    "LEBANON",
+    "LIBYA",
+    "LITHUANIA",
+    "LIECHTENSTEIN",
+    "LUXEMBOURG",
+    "MAURITIUS",
+    "MAURITANIA",
+    "MADAGASCAR",
+    "MALAWI",
+    "MALAYSIA",
+    "MALI",
+    "MALDIVES",
+    "MALTA",
+    "MOROCCO",
+    "MARSHALL ISLANDS",
+    "MEXICO",
+    "MICRONESIA",
+    "MOZAMBIQUE",
+    "MOLDOVA",
+    "MONACO",
+    "MONGOLIA",
+    "MYANMAR",
+    "NAMIBIA",
+    "NAURU",
+    "NEPAL",
+    "NIGER",
+    "NIGERIA",
+    "NETHERLANDS",
+    "NICARAGUA",
+    "NEW ZEALAND",
+    "NORWAY",
+    "UNITED ARAB EMIRATES",
+    "OMAN",
+    "PAKISTAN",
+    "PALAU",
+    "PANAMA",
+    "PAPUA NEW GUINEA",
+    "PARAGUAY",
+    "PERU",
+    "POLAND",
+    "PORTUGAL",
+    "RWANDA",
+    "ROMANIA",
+    "EL SALVADOR",
+    "SAMOA",
+    "SAN MARINO",
+    "SAO TOME AND PRINCIPE",
+    "SAUDI ARABIA",
+    "NORTH MACEDONIA",
+    "SEYCHELLES",
+    "SENEGAL",
+    "SAINT VINCENT AND THE GRENADINES",
+    "SAINT KITTS AND NEVIS",
+    "SAINT LUCIA",
+    "SERBIA",
+    "SINGAPORE",
+    "SYRIA",
+    "SLOVAKIA",
+    "SLOVENIA",
+    "UNITED STATES OF AMERICA",
+    "SOLOMON ISLANDS",
+    "SOMALIA",
+    "SUDAN",
+    "SURINAME",
+    "SIERRA LEONE",
+    "THAILAND",
+    "TANZANIA",
+    "TOGO",
+    "TONGA",
+    "TRINIDAD AND TOBAGO",
+    "TUVALU",
+    "TUNISIA",
+    "TURKMENISTAN",
+    "TURKEY",
+    "UGANDA",
+    "UKRAINE",
+    "URUGUAY",
+    "FIJI",
+    "PHILIPPINES",
+    "FINLAND",
+    "FRANCE",
+    "CROATIA",
+    "CENTRAL AFRICAN REPUBLIC",
+    "CHAD",
+    "MONTENEGRO",
+    "CZECH REPUBLIC",
+    "CHILE",
+    "SWITZERLAND",
+    "SWEDEN",
+    "SRI LANKA",
+    "ECUADOR",
+    "EQUATORIAL GUINEA",
+    "ERITREA",
+    "ESWATINI",
+    "ESTONIA",
+    "ETHIOPIA",
+    "SOUTH AFRICA",
+    "SOUTH SUDAN",
+    "JAMAICA",
+    "JAPAN"
+];
+
+    
 
 export default countries;

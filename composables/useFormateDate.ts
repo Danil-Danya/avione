@@ -13,5 +13,7 @@ export const useFormattedDate = (date: Ref<Date | null>) => {
         return `${day}.${month}.${year} г.`;
     });
 
-    return { formatted };
+    return { 
+        formatted 
+    };
 };

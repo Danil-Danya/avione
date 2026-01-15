@@ -26,6 +26,39 @@ img {
     object-fit: cover;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #9b9b9b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E4AB5;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #2E4AB5;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
 .title {
   color: #000;
   font-family: Inter;
@@ -48,6 +81,10 @@ img {
   &__page {
     margin-left: 360px;
     width: 100%;
+
+    @include media ($lg) {
+      margin-left: 0;
+    }
   }
   &__container {
     position: relative;
@@ -55,6 +92,10 @@ img {
     display: flex;
     gap: 20px;
     width: 100%;
+
+    @include media ($md) {
+      position: static;
+    }
   }
 }
 
@@ -62,11 +103,16 @@ img {
   color: #000 !important;
 }
 
+.calendar-input-el {
+  width: 100%;
+}
+
 .input {
   border-radius: 10px;
   background: #EFF1F4;
   border: none;
-  padding: 6px;
+  padding: 10px 15px;
+  font-size: 16px;
 
   &-radio {
     width: 20px;
@@ -177,6 +223,50 @@ img {
     }
 }
 
+.tariff__modal-content {
+  max-width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-top: 20px;
+
+  h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+  }
+
+  h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+  p {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+  ul {
+      list-style: disc;
+      margin-bottom: 10px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.tariff__error {
+    padding: 20px;
+    text-align: center;
+    color: #EE2532;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.vc-highlight-content-solid {
+  background: #1A3AAD;
+  outline: 2px solid rgb(148, 1, 1);
+}
+
 .checkbox {
   display: flex;
   align-items: center;
@@ -184,6 +274,19 @@ img {
   cursor: pointer;
   user-select: none;
 }
+
+.passangers__message {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.2;
+    max-width: 400px;
+
+    .highlight {
+        font-weight: 600;
+        color: #1A3AAD; // или любой акцентный цвет
+    }
+}
+
 
 .checkbox input {
   display: none;
@@ -282,12 +385,146 @@ input {
   }
 }
 
-.passengers__title-profile {
+.autocomplete {
+    position: relative;
+    width: 100%;
+}
+
+.autocomplete__li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 300ms;
+
+  &:hover {
+    background: #e6e6e6;
+  }
+}
+
+.autocomplete__list {
+    position: absolute;
+    top: calc(100% + 30px);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 999;
+    padding: 15px;
+}
+
+.autocomplete__item {
+    padding: 12px 50px 12px 16px;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.autocomplete__item:hover {
+    background: #F3F6FF;
+}
+
+.airport-title {
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.all-airports {
+    font-weight: 400;
+    font-size: 13px;
+    color: #555;
+    margin-left: 5px;
+}
+
+.airport-sub {
+    font-size: 13px;
+    color: #777;
+    margin-top: 2px;
+}
+
+.airport-code {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: #1A3AAD;
+}
+
+.airport-row {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+  padding: 5px 10px ;
+  cursor: pointer;
+
+  &:hover {
+    background: #e1e1e1;
+  }
+}
+
+.order__block {
+  margin-bottom: 30px;
+}
+
+.city-row {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  
+  &:hover {
+    background: #e1e1e1;
+  }
+}
+
+.passengers__head {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  @include media ($md) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.ticket__card-layover-info {
+    text-align: center;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #d32f2f;
+    margin: 10px 0;
+}
+
+.ticket__card-layover-text {
+    background: #fdecea;
+    padding: 4px 12px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 100%;
+}
+
+.modal-actions {
+  padding: 30px;
+}
+
+.modal-actions-button {
+  width: 100%;
 }
 
 .passengers {
   margin-bottom: 50px;
+  font-size: 18px;
 }
 
 .calendar-enter-from {
@@ -309,4 +546,29 @@ input {
 .modal-leave-to {
   opacity: 0;
   transform: scale(0.95);
+}
+
+.filter-modal-enter-active,
+.filter-modal-leave-active {
+    transition: all 0.55s ease;
+}
+
+.filter-modal-enter-from {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.filter-modal-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-modal-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-modal-leave-to {
+    opacity: 0;
+    transform: translateY(100%);
 }

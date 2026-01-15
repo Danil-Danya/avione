@@ -10,7 +10,7 @@
             :space-between="20"
             :loop="true"
             :centered-slides="true"
-            :slides-per-view="7"
+            :slides-per-view="slidesCounts"
             :autoplay="{
                 delay: 3500,
                 disableOnInteraction: false
@@ -45,8 +45,45 @@
 
     import FlightCard from '~/widgets/FlightCard.vue';
 
+    const slidesCounts: Ref<number> = ref(7);
+
+    const checkCountSlides = () => {
+        const clientWidth = window.innerWidth;
+        switch (true) {
+            case clientWidth < 450: {
+                slidesCounts.value = 1;
+                break;
+            }
+            
+            case clientWidth < 650: {
+                slidesCounts.value = 2;
+                break;
+            }
+
+            case clientWidth < 750: {
+                slidesCounts.value = 3;
+                break;
+            }
+
+            case clientWidth < 1000: {
+                slidesCounts.value = 4;
+                break;
+            }
+
+            default: {
+                slidesCounts.value = 7;
+                break;
+            }
+        }
+    }
+
     const LeftIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Left.vue')); 
     const RightIcon = defineAsyncComponent(() => import('~/shared-ui/icons/sliders/Right.vue'));
+
+    onMounted(() => {
+        checkCountSlides();
+        window.addEventListener('resize', () => checkCountSlides());
+    })
 
 </script>
 

@@ -6,6 +6,13 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    &__button {
+        @include media ($md) {
+            width: 100%;
+        }
     }
 
     &__baggage {
@@ -33,6 +40,7 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            margin-top: 10px;
         }
     }
 }

@@ -35,6 +35,18 @@
                 </li>
             </ul>
         </div>
+
+        <Button 
+            text="<"
+            background="#2E4AB5"
+            padding="15px 30px"
+            @click="goToBack"
+            v-if="!isMobile"
+        />
+
+        <RouterLink to="/" class="search__button" v-if="!isMobile">
+            Поиск
+        </RouterLink>
     </div>
 </template>
 
@@ -42,27 +54,39 @@
     import { ref } from 'vue';
     import { useRoute, useRouter } from 'vue-router';
 
+    import Button from '~/shared-ui/ui/Button.vue';
+
+    import { useI18n } from 'vue-i18n';
+    import { useIsMobile } from '~/composables/useIsMobile';
+
+    const { t } = useI18n();
+
     const route = useRoute();
     const router = useRouter();
+    const isMobile = useIsMobile();
+
+    const goToBack = () => {
+        router.go(-1);
+    }
 
     const relevationTabList: Ref<object[]> = ref([
         {
-            text: 'Активные',
+            text: t('relevationActive'),
             type: 'active'
         },
         {
-            text: 'Архив',
+            text: t('relevationArchive'),
             type: 'archive'
         }
     ]);
 
     const ticketTypeList: Ref<object[]> = ref([
         {
-            text: 'Авиабилеты',
+            text: t('tabFlights'),
             type: 'air'
         },
         {
-            text: 'Ж/д билеты',
+            text: t('tabRailway'),
             type: 'train'
         }
     ]);

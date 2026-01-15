@@ -5,8 +5,8 @@
                 <div class="advertising__sales">
                     <div class="advertising__sales-top">
                         <div class="advertising__sales-info">
-                            <h3 class="advertising__title">Дешёвые авиабилеты</h3>
-                            <p class="advertising__text">Успейте забронировать!</p>
+                            <h3 class="advertising__title">{{ $t('promoCheapTitle') }}</h3>
+                            <p class="advertising__text">{{ $t('promoCheapSubtitle') }}</p>
                         </div>
                         <div class="advertising__sales-image">
                             <img src="~/assets/images/advertising/decor.png" alt="decor" class="advertising__sales-img">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="advertising__best">
-                    <h3 class="advertising__title">Горячие туры!</h3>
+                    <h3 class="advertising__title">{{ $t('promoHotTours') }}</h3>
                     <img src="~/assets/images/advertising/best.png" alt="" class="advertising__best-img">
                 </div>
             </div>

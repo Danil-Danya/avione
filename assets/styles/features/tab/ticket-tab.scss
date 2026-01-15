@@ -12,12 +12,17 @@
         }
     }
 
+    &-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &-link{
         padding: 5px;
         font-size: 20px;
         color: #000000;
 
-        &.router-link-active {
+        &.ticket__tab-link--active {
             display: block;
             color: #ffffff;
             border-radius: 10px;

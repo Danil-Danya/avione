@@ -1,5 +1,5 @@
 .reservation {
-    padding: 50px 0;
+    padding: 30px 0;
 
     &__content {
         display: flex;
@@ -10,6 +10,10 @@
             gap: 0;
             background: #FFFFFF;
             border-radius: 10px;
+        }
+
+        @include media ($md) {
+            padding: 15px;
         }
     }
 

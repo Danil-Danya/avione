@@ -1,0 +1,65 @@
+.reservation {
+    &__tab {
+        margin-bottom: 30px;
+        &-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &-item {
+            padding: 5px 30px;
+            background: #FFF;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            transition: all 300ms;
+
+            &.active {
+                background: #2E4AB5 !important;
+            }
+        }
+
+        &-time {
+            color: #000;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            &.active {
+                color: #FFF;
+            }
+        }
+
+        &-info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+        }
+
+        &-price {
+            color: #64696D;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            &.cheapest {
+                color: #05E347;
+            }
+
+            &.active {
+                color: #FFF;
+            }
+        }
+    }
+}

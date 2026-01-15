@@ -8,11 +8,25 @@
     padding: 10px 30px;
     border-radius: 10px;
 
+    @include media ($lg) {
+        height: auto;
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
     &-list {
         display: flex;
         max-width: 600px;
         width: 100%;
         gap: 30px;
+
+        @include media ($lg) {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
     }
 
     &-link {
@@ -26,6 +40,10 @@
         padding: 5px;
         transition: all 300ms;
         border-radius: 10px;
+
+        @include media ($sm) {
+            font-size: 16px;
+        }
 
         &.active {
             color: #FFFFFF;

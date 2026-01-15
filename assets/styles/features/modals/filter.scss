@@ -1,0 +1,23 @@
+.filter__modal {
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 15px;
+
+    &-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    &-button {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
